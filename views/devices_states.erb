@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>OlymPi Controller Application</title>
+    <style>
+      body {
+        background-color: #EEE;
+        font-family: Arial, Sans-Serif;
+        font-size: 10pt;
+        width: 640px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-width: 0;
+      }
+      tr.odd {
+        background-color: #CECECE;
+      }
+      tr.even {
+        background-color: #DEDEDE;
+      }
+      td {
+        border-width: 0;
+        padding: 0.75em 2em;
+      }
+      td.name {
+        font-weight: bold;
+        text-align: left;
+      }
+      td.state {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body style="background-color: #EEE">
+    <h2>Maison</h2>
+    <table>
+      <% i = 1 %>
+      <% devices.each do |pin, device| %>
+      <tr class="<%= i % 2 == 0 ? 'even' : 'odd' %>">
+        <td class="name"><%= device[:name] %></td><td class="state"><a href="/toggle/<%= pin %>"><img src="images/bulb_light_<%= device[:state] == 0 ? 'on' : 'off' %>.png"/></a></td>
+      </tr>
+      <% i += 1 %>
+      <% end %>
+    </table>
+  </body>
+</html>

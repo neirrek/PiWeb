@@ -1,0 +1,50 @@
+#! /bin/sh
+
+NAME=piweb
+DESC="PiWeb Controller Application"
+
+. /lib/lsb/init-functions
+
+start() {
+  . /home/pi/piweb/start.sh
+}
+
+stop() {
+  pid=`ps aux | grep r\[u\]by | grep '\-p 15117' | awk '{print $2}'`
+  sudo kill -9 $pid
+}
+
+status() {
+  pid=`ps aux | grep r\[u\]by | grep '\-p 15117' | awk '{print $2}'`
+  if [ -z "$pid" ]; then
+    echo "Service $NAME is down"
+  else
+    echo "Service $NAME is up and running [$pid]"
+  fi
+}
+
+case "$1" in
+
+  start)
+    log_daemon_msg "Starting $DESC" "$NAME"
+    start
+    log_end_msg $?
+    ;;
+
+  stop)
+    log_daemon_msg "Stopping $DESC" "$NAME"
+    stop
+    log_end_msg $?
+    ;;
+  restart)
+    log_daemon_msg "Restarting $DESC" "$NAME"
+    stop
+    start
+    log_end_msg $?
+    ;;
+  status)
+    status
+    ;;
+esac
+
+exit 0
