@@ -1,0 +1,16 @@
+#
+# PiWeb configuration file
+# ========================
+#
+# Example:
+#
+# place: <place_name>
+# devices:
+#  <pin_number>: <switch_label> 
+#  <pin_number>: <switch_label>
+#  ...
+#
+
+place: Maison
+devices:
+ 0: Pièce palière

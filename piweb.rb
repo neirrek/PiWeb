@@ -7,6 +7,7 @@ Bundler.setup
 require 'sinatra/base'
 require 'wiringpi'
 require 'tilt/erb'
+require 'yaml'
 
 class Main < Sinatra::Base
 
@@ -16,8 +17,10 @@ class Main < Sinatra::Base
     file = File.new("#{settings.root}/log/#{settings.environment}.log", 'a+')
     file.sync = true
     use Rack::CommonLogger, file
+    config = YAML.load_file("#{settings.root}/config/config.yml")
+    set :place, config['place']
+    set :devices, config['devices']
     set :io, WiringPi::GPIO.new
-    set :devices, { 0 => 'Pièce palière' }
     settings.devices.keys.each { |pin| settings.io.pin_mode pin, WiringPi::OUTPUT }
   end
 
@@ -27,7 +30,7 @@ class Main < Sinatra::Base
       state = settings.io.digital_read pin
       devices[pin] = { :name => name, :state => state }
     end
-    erb :devices_states, :locals => { :devices => devices }
+    erb :devices_states, :locals => { :place => settings.place, :devices => devices }
   end
 
   get '/toggle/:pin' do
