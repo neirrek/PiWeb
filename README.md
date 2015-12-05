@@ -12,8 +12,8 @@ $ wheneverize .
 If you want the PiWeb webapp to start automatically at boot-time, you can copy the script `piweb` located in PiWeb's root directory in `/etc/init.d`. Doing this will make PiWeb a service. Then, you will be able to execute the following commands:
 
 ```
-$ sudo /etc/init.d/piweb status
-$ sudo /etc/init.d/piweb stop
-$ sudo /etc/init.d/piweb start
-$ sudo /etc/init.d/piweb restart
+$ service piweb status
+$ service piweb stop
+$ service piweb start
+$ service piweb restart
 ```
