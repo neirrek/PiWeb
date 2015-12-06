@@ -3,7 +3,7 @@ PiWeb
 
 PiWeb is a Sinatra-based Ruby webapp to be installed on a Raspberry Pi in order to remotely control its GPIO pins. This allows to control relay modules to switch devices on and off.
 
-Thanks to the Whenever Gem, the aactivation/deactivation of each GPIO pin may be croned at will. To do so, you have to schedule the switching in the file `config/schedule.rb`. Then, execute the following command in PiWeb's root directory:
+Thanks to the Whenever Gem, the activation/deactivation of each GPIO pin may be croned at will. To do so, you have to schedule the switching in the file `config/schedule.rb`. Then, execute the following command in PiWeb's root directory:
 
 ```
 $ wheneverize .
