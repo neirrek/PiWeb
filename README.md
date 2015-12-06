@@ -1,4 +1,4 @@
-Web
+PiWeb
 =====
 
 PiWeb is a Sinatra-based Ruby webapp to be installed on a Raspberry Pi in order to remotely control its GPIO pins. This allows to control relay modules to switch devices on and off.
