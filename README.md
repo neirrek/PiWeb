@@ -1,12 +1,11 @@
-Web
+PiWeb
 =====
 
 PiWeb is a Sinatra-based Ruby webapp to be installed on a Raspberry Pi in order to remotely control its GPIO pins. This allows to control relay modules to switch devices on and off.
 
 ## Installation Prerequisite
 
-In order to install PiWeb on your Raspberry Pi, you first have to ensure that the WiringPi GPIO interface library is already installed. To check this, execu
-te the following command on your Raspberry Pi using a SSH connection:
+In order to install PiWeb on your Raspberry Pi, you first have to ensure that the WiringPi GPIO interface library is already installed. To check this, execute the following command on your Raspberry Pi using a SSH connection:
 
 ```
 gpio -v
