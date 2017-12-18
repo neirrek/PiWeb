@@ -15,7 +15,7 @@ GEM
     tilt (2.0.1)
     whenever (0.9.4)
       chronic (>= 0.6.3)
-    wiringpi (2.0.0)
+    wiringpi2 (2.0.1)
 
 PLATFORMS
   ruby
@@ -25,4 +25,10 @@ DEPENDENCIES
   sinatra (~> 1.4.6)
   tilt (~> 2.0.1)
   whenever
-  wiringpi (~> 2.0.0)
+  wiringpi2 (~> 2.0.1)
+
+RUBY VERSION
+   ruby 1.9.3p194
+
+BUNDLED WITH
+   1.16.0

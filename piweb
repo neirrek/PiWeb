@@ -1,12 +1,21 @@
 #! /bin/sh
 
+### BEGIN INIT INFO
+# Provides:          piweb
+# Required-Start:    $network $local_fs $remote_fs $syslog
+# Required-Stop:     $network $local_fs $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start PiWeb web application
+### END INIT INFO
+
 NAME=piweb
 DESC="PiWeb Controller Application"
 
 . /lib/lsb/init-functions
 
 start() {
-  . /home/pi/piweb/start.sh
+  . /home/pi/PiWeb/start.sh
 }
 
 stop() {

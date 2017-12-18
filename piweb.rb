@@ -5,7 +5,7 @@ require 'bundler'
 Bundler.setup
 
 require 'sinatra/base'
-require 'wiringpi'
+require 'wiringpi2'
 require 'tilt/erb'
 require 'yaml'
 require 'socket'
